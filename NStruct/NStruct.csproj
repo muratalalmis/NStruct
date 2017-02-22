@@ -48,6 +48,11 @@
     <Compile Include="Configuration\AppConfigConfigurable.cs" />
     <Compile Include="Configuration\IAppConfigConfigurable.cs" />
     <Compile Include="CoreException.cs" />
+    <Compile Include="Events\EventException.cs" />
+    <Compile Include="Events\EventManager.cs" />
+    <Compile Include="Events\IEventHandler.cs" />
+    <Compile Include="Events\IEventManager.cs" />
+    <Compile Include="Events\InvokeExtensions.cs" />
     <Compile Include="FatalException.cs" />
     <Compile Include="IDependency.cs" />
     <Compile Include="IoC\Container.cs" />
@@ -108,7 +113,6 @@
   <ItemGroup>
     <Folder Include="Agent\" />
     <Folder Include="Data\" />
-    <Folder Include="Events\" />
     <Folder Include="Security\" />
     <Folder Include="Tasks\" />
     <Folder Include="Tracking\" />

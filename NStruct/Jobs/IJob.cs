@@ -11,7 +11,7 @@
         /// <value>
         /// The status.
         /// </value>
-        TaskStatus Status { get; set; }
+        JobStatus Status { get; set; }
 
         /// <summary>
         /// Gets the priority.

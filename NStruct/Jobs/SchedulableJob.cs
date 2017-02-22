@@ -1,5 +1,5 @@
 ﻿using System;
-using NStruct.Jobs.Schedule;
+using NStruct.Jobs.Scheduling;
 using NStruct.Jobs.Triggers;
 
 namespace NStruct.Jobs
@@ -19,9 +19,9 @@ namespace NStruct.Jobs
         {
             try
             {
-                if (this.Enabled && this.Status != TaskStatus.Working)
+                if (this.Enabled && this.Status != JobStatus.Working)
                 {
-                    this.Status = TaskStatus.Working;
+                    this.Status = JobStatus.Working;
                     Run();
 
                     _last = DateTime.Now;
@@ -30,9 +30,9 @@ namespace NStruct.Jobs
             }
             catch (Exception ex)
             {
-                this.Status = TaskStatus.Failed;
+                this.Status = JobStatus.Failed;
 
-                throw new TaskException(ex);
+                throw new JobException(ex);
             }
         }
 
@@ -44,7 +44,7 @@ namespace NStruct.Jobs
             var factory = new TriggerFactory(this.Trigger);
             _next = factory.Forward(_last ?? DateTime.Now);
 
-            this.Status = TaskStatus.Ready;
+            this.Status = JobStatus.Ready;
         }
 
         /// <summary>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NStruct.Jobs.Schedule
+namespace NStruct.Jobs.Scheduling
 {
     /// <summary>
     /// The schedulable

@@ -5,7 +5,7 @@ namespace NStruct.Jobs
     /// <summary>
     /// The job processor
     /// </summary>
-    public static class Processor
+    internal static class Processor
     {
         static Timer _timer = new Timer(TimerHandler, null, Interval, Interval);
         static JobQueue _queue;
@@ -37,7 +37,7 @@ namespace NStruct.Jobs
         /// Processes the job.
         /// </summary>
         /// <param name="job">The job.</param>
-        public static void ProcessJob(Job job)
+        public static void Enqueue(Job job)
         {
             _queue.Enqueue(job);
         }

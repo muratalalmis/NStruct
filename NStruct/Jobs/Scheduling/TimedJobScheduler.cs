@@ -9,7 +9,7 @@ namespace NStruct.Jobs.Schedule
     /// <summary>
     /// The timed job scheduler
     /// </summary>
-    public static class TimedJobScheduler
+    internal static class TimedJobScheduler
     {
         static IEnumerable<SchedulableJob> _jobs;
         static Timer _timer;
@@ -45,7 +45,7 @@ namespace NStruct.Jobs.Schedule
         /// <value>
         /// The schedule.
         /// </value>
-        public static IEnumerable<SchedulableJob> Schedule => _jobs;
+        public static Scheduling.Schedule Schedule => Scheduling.Schedule.Create(_jobs);
 
         static void TimerHandler(object state)
         {

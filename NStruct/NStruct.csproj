@@ -64,11 +64,13 @@
     <Compile Include="IoC\IocModule.cs" />
     <Compile Include="Jobs\ActionJob.cs" />
     <Compile Include="Jobs\IJob.cs" />
+    <Compile Include="Jobs\JobManager.cs" />
     <Compile Include="Jobs\Processor.cs" />
-    <Compile Include="Jobs\Schedule\ISchedulable.cs" />
-    <Compile Include="Jobs\Schedule\TimedJobScheduler.cs" />
-    <Compile Include="Jobs\TaskException.cs" />
-    <Compile Include="Jobs\TaskStatus.cs" />
+    <Compile Include="Jobs\Scheduling\ISchedulable.cs" />
+    <Compile Include="Jobs\Scheduling\Schedule.cs" />
+    <Compile Include="Jobs\Scheduling\TimedJobScheduler.cs" />
+    <Compile Include="Jobs\JobException.cs" />
+    <Compile Include="Jobs\JobStatus.cs" />
     <Compile Include="Jobs\Triggers\DailyTrigger.cs" />
     <Compile Include="Jobs\Triggers\HourlyTrigger.cs" />
     <Compile Include="Jobs\Triggers\ITrigger.cs" />

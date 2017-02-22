@@ -3,7 +3,7 @@
     /// <summary>
     /// The task status
     /// </summary>
-    public enum TaskStatus
+    public enum JobStatus
     {
         /// <summary>
         /// The ready

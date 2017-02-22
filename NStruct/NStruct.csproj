@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{380CDF22-6C61-4FF8-8ED6-82F80EFCEE9B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NStruct</RootNamespace>
+    <AssemblyName>NStruct</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Caching\CacheManagerBase.cs" />
+    <Compile Include="Caching\CacheManagerExtensions.cs" />
+    <Compile Include="Caching\ICacheManager.cs" />
+    <Compile Include="Configuration\AppConfigConfigurable.cs" />
+    <Compile Include="Configuration\IAppConfigConfigurable.cs" />
+    <Compile Include="CoreException.cs" />
+    <Compile Include="FatalException.cs" />
+    <Compile Include="IDependency.cs" />
+    <Compile Include="IoC\Container.cs" />
+    <Compile Include="IoC\ContainerBuilder.cs" />
+    <Compile Include="IoC\ContainerHolder.cs" />
+    <Compile Include="IoC\IContainerRegistrar.cs" />
+    <Compile Include="IoC\IContainerResolver.cs" />
+    <Compile Include="IoC\IModuleRegistrar.cs" />
+    <Compile Include="IoC\IocModule.cs" />
+    <Compile Include="Localization\ILocalizedTextProvider.cs" />
+    <Compile Include="Localization\IText.cs" />
+    <Compile Include="Localization\LocalizationUtilies.cs" />
+    <Compile Include="Localization\LocalizedString.cs" />
+    <Compile Include="Localization\Localizer.cs" />
+    <Compile Include="Localization\LocalizerExtensions.cs" />
+    <Compile Include="Localization\XmlLocalizationProvider.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\ILoggingManager.cs" />
+    <Compile Include="Logging\LoggingInvokerExtensions.cs" />
+    <Compile Include="Logging\LogLevelException.cs" />
+    <Compile Include="Logging\MultiLoggingManager.cs" />
+    <Compile Include="Mapping\IMapper.cs" />
+    <Compile Include="Mapping\IMappingManager.cs" />
+    <Compile Include="Mapping\Mapper.cs" />
+    <Compile Include="Mapping\MappingException.cs" />
+    <Compile Include="Mapping\MappingManager.cs" />
+    <Compile Include="Mapping\MappingModule.cs" />
+    <Compile Include="Mapping\UnRegisteredMappingException.cs" />
+    <Compile Include="NoSql\Document\IDocument.cs" />
+    <Compile Include="NoSql\Document\IDocumentRepository.cs" />
+    <Compile Include="NoSql\Document\IDocumentStorage.cs" />
+    <Compile Include="NoSql\Document\IMongoStorage.cs" />
+    <Compile Include="NoSql\Mongo\Builder\IFilterBuilder.cs" />
+    <Compile Include="NoSql\Mongo\Builder\IProjectionBuilder.cs" />
+    <Compile Include="NoSql\Mongo\Builder\IUpdateBuilder.cs" />
+    <Compile Include="NoSql\Mongo\IMongoConfiguration.cs" />
+    <Compile Include="NoSql\Mongo\IMongoRepository.cs" />
+    <Compile Include="NoSql\Redis\IRedisConfiguration.cs" />
+    <Compile Include="NoSql\Redis\IRedisDeletor.cs" />
+    <Compile Include="NoSql\Redis\IRedisIncrementor.cs" />
+    <Compile Include="NoSql\Redis\IRedisListOperator.cs" />
+    <Compile Include="NoSql\Redis\IRedisManager.cs" />
+    <Compile Include="NoSql\Redis\IRedisPublisher.cs" />
+    <Compile Include="NoSql\Redis\IRedisReader.cs" />
+    <Compile Include="NoSql\Redis\IRedisRepository.cs" />
+    <Compile Include="NoSql\Redis\IRedisStorage.cs" />
+    <Compile Include="NoSql\Redis\IRedisSubScriber.cs" />
+    <Compile Include="NoSql\Redis\IRedisWriter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\ExpressionUtils.cs" />
+    <Compile Include="Validation\DefaultValidationResult.cs" />
+    <Compile Include="Validation\IValidationResult.cs" />
+    <Compile Include="Validation\IValidationResultContext.cs" />
+    <Compile Include="Validation\ValidationException.cs" />
+    <Compile Include="Validation\ValidationResultContext.cs" />
+    <Compile Include="Validation\Validator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Agent\" />
+    <Folder Include="Data\" />
+    <Folder Include="Events\" />
+    <Folder Include="Security\" />
+    <Folder Include="Tasks\" />
+    <Folder Include="Tracking\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

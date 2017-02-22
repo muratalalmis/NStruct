@@ -62,6 +62,28 @@
     <Compile Include="IoC\IContainerResolver.cs" />
     <Compile Include="IoC\IModuleRegistrar.cs" />
     <Compile Include="IoC\IocModule.cs" />
+    <Compile Include="Jobs\ActionJob.cs" />
+    <Compile Include="Jobs\IJob.cs" />
+    <Compile Include="Jobs\Processor.cs" />
+    <Compile Include="Jobs\Schedule\ISchedulable.cs" />
+    <Compile Include="Jobs\Schedule\TimedJobScheduler.cs" />
+    <Compile Include="Jobs\TaskException.cs" />
+    <Compile Include="Jobs\TaskStatus.cs" />
+    <Compile Include="Jobs\Triggers\DailyTrigger.cs" />
+    <Compile Include="Jobs\Triggers\HourlyTrigger.cs" />
+    <Compile Include="Jobs\Triggers\ITrigger.cs" />
+    <Compile Include="Jobs\Job.cs" />
+    <Compile Include="Jobs\JobQueue.cs" />
+    <Compile Include="Jobs\Priority.cs" />
+    <Compile Include="Jobs\SchedulableJob.cs" />
+    <Compile Include="Jobs\Triggers\DelegateTrigger.cs" />
+    <Compile Include="Jobs\Triggers\MinuteTrigger.cs" />
+    <Compile Include="Jobs\Triggers\MonthlyTrigger.cs" />
+    <Compile Include="Jobs\Triggers\SecondTrigger.cs" />
+    <Compile Include="Jobs\Triggers\TimeTrigger.cs" />
+    <Compile Include="Jobs\Triggers\TriggerFactory.cs" />
+    <Compile Include="Jobs\Triggers\WeeklyTrigger.cs" />
+    <Compile Include="Jobs\Triggers\YearlyTrigger.cs" />
     <Compile Include="Localization\ILocalizedTextProvider.cs" />
     <Compile Include="Localization\IText.cs" />
     <Compile Include="Localization\LocalizationUtilies.cs" />
@@ -114,7 +136,6 @@
     <Folder Include="Agent\" />
     <Folder Include="Data\" />
     <Folder Include="Security\" />
-    <Folder Include="Tasks\" />
     <Folder Include="Tracking\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

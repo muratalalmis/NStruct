@@ -32,5 +32,15 @@ namespace NStruct
             : base(string.Format(message, parameters))
         {
         }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CoreException"/> class.
+        /// </summary>
+        /// <param name="message">The message.</param>
+        /// <param name="exception">The exception.</param>
+        public CoreException(string message, Exception exception)
+            : base(message, exception)
+        {
+        }
     }
 }
